@@ -1,3 +1,5 @@
+// crud-------------------------------------
+
 let file = require('fs')
 // file.writeFileSync('read.txt', 'welcome to node js')
 
@@ -23,3 +25,4 @@ let file = require('fs')
 // file.renameSync('ghj/abc.txt', 'ghj/xyz.txt')
 // file.unlinkSync('ghj/xyz.txt')
 // file.rmdirSync('ghj')
+
