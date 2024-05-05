@@ -10,6 +10,8 @@ function multi(a, b) {
     return a * b
 }
 
+let adarsh = 'programmer'
+
 // long cut method to export
 
 // module.exports.add = add
@@ -18,4 +20,4 @@ function multi(a, b) {
 
 
 //destructuring or short cut method to export
-module.exports = {add, sub, multi}
+module.exports = {add, sub, multi, adarsh}
