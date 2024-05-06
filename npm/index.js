@@ -5,6 +5,7 @@ let validator = require('validator');
 
 console.log(chalk.green.inverse('hello'));
 
-let email = 'adarsh@jha.com'
+let email = 'adarshjha.com'
+let response = validator.isEmail(email);
 
-console.log(validator.isEmail(email));
+console.log(response ? chalk.green.inverse(response) : chalk.red.inverse(response));
