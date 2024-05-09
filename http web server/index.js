@@ -16,7 +16,8 @@ const server = http.createServer((req, res) => {
         res.end('i am about page')
     } else{
         res.writeHead(404, { "content-type" : "text/html"});
-        res.end(" 404, not found ")
+        res.end(" 404, not found \n ")
+
 
     }
 })
