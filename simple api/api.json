@@ -1,0 +1,66 @@
+{
+    "results": [
+      {
+        "gender": "female",
+        "name": {
+          "title": "Miss",
+          "first": "Gwendolyn",
+          "last": "Daniels"
+        },
+        "location": {
+          "street": {
+            "number": 6371,
+            "name": "Westheimer Rd"
+          },
+          "city": "Scurry",
+          "state": "California",
+          "country": "United States",
+          "postcode": 23976,
+          "coordinates": {
+            "latitude": "87.7380",
+            "longitude": "131.3824"
+          },
+          "timezone": {
+            "offset": "+3:00",
+            "description": "Baghdad, Riyadh, Moscow, St. Petersburg"
+          }
+        },
+        "email": "gwendolyn.daniels@example.com",
+        "login": {
+          "uuid": "6308afd1-22dc-4778-a769-c9befbb13ef0",
+          "username": "organicpeacock661",
+          "password": "gagging",
+          "salt": "i2VDCH4D",
+          "md5": "000653aac67144259f1aa2604b1e49d8",
+          "sha1": "9be21cfe471da92a26a138597fea7496db104371",
+          "sha256": "26ac4c5c41d421bd8258f36194d23e81e2a53a2b1d61c4810890860fea9213c9"
+        },
+        "dob": {
+          "date": "1985-07-18T05:01:02.250Z",
+          "age": 38
+        },
+        "registered": {
+          "date": "2019-12-21T18:13:36.704Z",
+          "age": 4
+        },
+        "phone": "(771) 399-0816",
+        "cell": "(906) 863-1033",
+        "id": {
+          "name": "SSN",
+          "value": "634-11-1670"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/women/92.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/women/92.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/women/92.jpg"
+        },
+        "nat": "US"
+      }
+    ],
+    "info": {
+      "seed": "5cc4b98e287f2b6e",
+      "results": 1,
+      "page": 1,
+      "version": "1.4"
+    }
+  }
