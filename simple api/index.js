@@ -20,14 +20,16 @@ if (req.url === '/') {
         res.end('server saying contact page')
 
 } else if (req.url === '/api') {
-    fs.readFile(`${__dirname}/api.json`, 'utf-8', (err, data) =>{
+    fs.readFile(`api.json`, 'utf-8', (err, data) =>{
 
-        console.log(data);
-
+        res.writeHead(200, { 'content-type' : 'text/JSON'})
 
         // let objData = JSON.parse(data)
-        // res.end(objData)
-        res.end(JSON.parse(data));
+        // res.end(JSON.parse(data))
+        // data.replace("\r\n", '');
+        let jsonResponse = JSON.parse(data);
+        let modifiedResponse = JSON.stringify(jsonResponse);
+        res.end( modifiedResponse);
     })
 
 } else {
@@ -36,8 +38,6 @@ if (req.url === '/') {
 }
 
 })
-
-
 
 let port = 3000;
 server.listen(port, () =>{
