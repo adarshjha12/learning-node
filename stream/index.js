@@ -7,6 +7,11 @@ const fs = require('fs')
 let server = http.createServer()
 
 // reading data
+// this will read data from your file and send it as a response to client.
+// stream is very useful when you want to send data chunk by chunk( line by line)
+// it will not send all data at once, it will send it line by line. this can reduce extra memory uses.
+
+// when we used readfile previously, it was sending entire data at once. so that is difference between readfile() method vs createReadStream() method.
 
 server.on('request', (req, res ) =>{
 
@@ -28,7 +33,7 @@ server.on('request', (req, res ) =>{
 })
 
 // writing data
-
+// this will write anything in your file
 
 // server.on('request', (req, res ) =>{
 
