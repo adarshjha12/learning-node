@@ -11,7 +11,7 @@ server.on('request', (req, res ) =>{
     let stream = fs.createReadStream('abc.txt')
 
     stream.on('data', (chunkData) =>{
-        res.end(chunkData)
+        res.write(chunkData)
     })
 
     stream.on('end', () =>{
