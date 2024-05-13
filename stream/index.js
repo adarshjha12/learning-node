@@ -24,21 +24,24 @@ server.on('request', (req, res ) =>{
          res.end('file not found')
      })
 
+
 })
 
 // writing data
-server.on('request', (req, res ) =>{
 
-    let stream = fs.createWriteStream('write.txt')
 
-    stream.write('hello world')
-    stream.end()
+// server.on('request', (req, res ) =>{
 
-    stream.on('finish' , () =>{
-        res.end('Data has been written to the file');
-    })
+//     let stream = fs.createWriteStream('write.txt')
 
-})
+//     stream.write('hello world')
+//     stream.end()
+
+//     stream.on('finish' , () =>{
+//         res.end('Data has been written to the file');
+//     })
+
+// })
 
 
 let port = 3000
