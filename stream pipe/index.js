@@ -30,10 +30,9 @@ server.on('request', (req, res) => {
     let stream = fs.createReadStream('read.txt')
 
     stream.pipe(res)
-
 })
 
 
 server.listen(3000, () =>{
-    console.log();
+    console.log('server is running on port 3000');
 })
