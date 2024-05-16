@@ -72,14 +72,23 @@ body{
     }
 
     & #location{
-        padding: 1rem 0;
+        padding: .5rem 0;
     }
 
     & #section-date{
         font-size: .6rem;
         font-weight: 500;
-        padding: 1rem 0;
+        padding-bottom: 1rem ;
 
+    }
+
+    & #section-temp {
+        padding-bottom: 1rem;
+
+        & #min-max{
+            font-size: .6rem;
+
+        }
     }
 }
 
