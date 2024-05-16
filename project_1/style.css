@@ -22,7 +22,7 @@ body{
 }
 
  .section-img{
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
     & i{
         font-size: 2rem;
@@ -30,15 +30,43 @@ body{
     }
 }
 
-#wrapper{
+#wrapper-1{
     width: 200px;
     height: auto;
     padding: 1rem 2rem;
     border-radius: 14px;
     background-color: rgb(210, 130, 234);
+    position: relative;
     
 }
 
+
+#wrapper-2{
+    &::before{
+        content: '';
+        position: absolute;
+        top: 140px;
+        left: -20%;
+        height: 300px;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        background-color: aliceblue;
+        animation: rotate 3s linear infinite;
+    }
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: 160px;
+        left: -20%;
+        height: 300px;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        background-color: aliceblue;
+        animation: rotate 3s linear infinite;
+
+    }
+}
 
 
 #section-temp{
