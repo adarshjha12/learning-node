@@ -36,41 +36,16 @@ body{
     padding: 1rem 1rem;
     border-radius: 14px;
     background: linear-gradient(skyblue, blue);
-    position: relative;
-    z-index: -1;
     overflow: hidden;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 
 #wrapper-2{
-    &::before{
-        content: '';
-        position: absolute;
-        top: 140px;
-        left: -40%;
-        width: 400px;
-        border-radius: 50%;
-        height: 370px;
-        background-color: rgb(137, 197, 249);
-        animation: rotate 5s linear infinite;
-        z-index: -1;
-    }
 
-    &::after{
-        content: '';
-        position: absolute;
-        top: 160px;
-        left: -30%;
-        width: 400px;
-        border-radius: 50%;
-        height: 370px;
-        background-color: rgb(187, 215, 240);
-        animation: rotate 3s linear infinite;
-        z-index: -1;
-
-    }
-
+    
     & #location{
         padding: .5rem 0;
     }
@@ -91,6 +66,34 @@ body{
         }
     }
 }
+
+ .box-1{
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 140px;
+    left: 0%;
+    width: 400px;
+    border-radius: 50%;
+    height: 370px;
+    background-color: rgb(137, 197, 249);
+    animation: rotate 5s linear infinite;
+}
+
+ .box-2{
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 160px;
+    left: -30%;
+    width: 400px;
+    border-radius: 50%;
+    height: 370px;
+    background-color: rgb(187, 215, 240);
+    animation: rotate 3s linear infinite;
+
+}
+
 
 @keyframes rotate{
     0%{
