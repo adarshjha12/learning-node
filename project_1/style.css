@@ -33,11 +33,13 @@ body{
 #wrapper-1{
     width: 200px;
     height: auto;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     border-radius: 14px;
-    background-color: rgb(210, 130, 234);
+    background: linear-gradient(skyblue, blue);
     position: relative;
-    
+    z-index: -1;
+    overflow: hidden;
+    text-align: center;
 }
 
 
@@ -46,25 +48,48 @@ body{
         content: '';
         position: absolute;
         top: 140px;
-        left: -20%;
-        height: 300px;
+        left: -40%;
+        width: 400px;
         border-radius: 50%;
-        aspect-ratio: 1;
-        background-color: aliceblue;
-        animation: rotate 3s linear infinite;
+        height: 370px;
+        background-color: rgb(137, 197, 249);
+        animation: rotate 5s linear infinite;
+        z-index: -1;
     }
 
     &::after{
         content: '';
         position: absolute;
         top: 160px;
-        left: -20%;
-        height: 300px;
+        left: -30%;
+        width: 400px;
         border-radius: 50%;
-        aspect-ratio: 1;
-        background-color: aliceblue;
+        height: 370px;
+        background-color: rgb(187, 215, 240);
         animation: rotate 3s linear infinite;
+        z-index: -1;
 
+    }
+
+    & #location{
+        padding: 1rem 0;
+    }
+
+    & #section-date{
+        font-size: .6rem;
+        font-weight: 500;
+        padding: 1rem 0;
+
+    }
+}
+
+@keyframes rotate{
+    0%{
+        rotate: 0deg;
+    }
+
+    100%{
+        rotate: 360deg;
     }
 }
 
