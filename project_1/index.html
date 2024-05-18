@@ -42,12 +42,12 @@
 </body>
 
 <script>
-    let currentDate = document.getElementById('section-date')
+    let currentDate = document.getElementById('date')
     let currentTime = document.getElementById('time')
 
     let tempStatus = 'clouds';
     let currDate = new Date();
-    console.log(currDate.toLocaleDateString());
-    
+    currentDate.innerHTML = currDate.toLocaleDateString();
+
 </script>
 </html>
