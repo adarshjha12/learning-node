@@ -77,9 +77,12 @@
     month[11] = 'dec'
 
     let newMonth = month[d.getMonth()]
+    let newDate = d.getDate()
+    let year = d.getFullYear()
 
-    currentDate.innerHTML = d.getDate() + newMonth.toUpperCase() + d.getFullYear() + '|' + newDay.toUpperCase()
+    currentDate.innerHTML = ` ${newDate} ${newMonth} ${year} |  ${newDay.toUpperCase()}`
 
+    
     currentTime.innerHTML = d.toLocaleTimeString()
     currentDate.style.backgroundColor = 'green'
     currentDate.style.color = 'white'
