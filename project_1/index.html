@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="index.js">
 </head>
 <body>
     <div id="wrapper-1">
@@ -44,12 +46,26 @@
 <script>
     let currentDate = document.getElementById('date')
     let currentTime = document.getElementById('time')
+    
 
-    let tempStatus = 'clouds';
-    let currDate = new Date();
-    currentDate.innerHTML = currDate.toLocaleDateString();
-    // console.log(currDate.toLocaleTimeString());
-    currentTime.innerHTML = currDate.toLocaleTimeString();
+    let d = new Date()
+    let weekday = new Array(7)
+        weekday[0] = 'sunday'
+        weekday[1] = 'monday'   
+        weekday[2] = 'tuesday'
+        weekday[3] = 'wednesday'
+        weekday[4] = 'thursday'
+        weekday[5] = 'friday'
+        weekday[6] = 'saturday'
+
+    let newDate = weekday[d.getDay()]
+    console.log(newDate);
+
+    
+  
 
 </script>
 </html>
+
+https://api.openweathermap.org/data/2.5/weather?q=Patna&appid=15facce67a51ac42cf416ee97a10bfc2
+
