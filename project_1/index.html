@@ -49,44 +49,29 @@
     
 
     let d = new Date()
-    d.for
-    let weekday = new Array(7)
-        weekday[0] = 'sun'
-        weekday[1] = 'mon'   
-        weekday[2] = 'tue'
-        weekday[3] = 'wed'
-        weekday[4] = 'thu'
-        weekday[5] = 'fri'
-        weekday[6] = 'sat'
+    let weekday = ['sun','mon','tue','wed','thu','fri','sat']
 
     let newDay = weekday[d.getDay()]
     console.log(newDay);
 
-    let month = new Array(12)
-    month[0] = 'jan'
-    month[1] = 'feb'
-    month[2] = 'mar'
-    month[3] = 'apr'
-    month[4] = 'may'
-    month[5] = 'june'
-    month[6] = 'july'
-    month[7] = 'aug'
-    month[8] = 'sep'
-    month[9] = 'oct'
-    month[10] = 'nov'
-    month[11] = 'dec'
-
-    let newMonth = month[d.getMonth()]
+    let month = ['jan','feb','mar','apr','may','june','july','aug','sep','oct','nov',
+     'dec']
+ 
+    let newMonth = month[d.getMonth() ]
     let newDate = d.getDate()
     let year = d.getFullYear()
 
     currentDate.innerHTML = ` ${newDate} ${newMonth} ${year} |  ${newDay.toUpperCase()}`
 
+
+    setInterval( () => {
+        currentTime.innerHTML = date.toLocaleTimeString()
+        let date = new Date()
+
+    }, 1000)
     
-    currentTime.innerHTML = d.toLocaleTimeString()
     currentDate.style.backgroundColor = 'green'
     currentDate.style.color = 'white'
-
 </script>
 </html>
 
