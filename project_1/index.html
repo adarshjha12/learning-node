@@ -20,10 +20,10 @@
                 <form action="">   
                     <input type="text" name="text" id="text" placeholder="enter city name">
 
-                    <span id="icon">
-                        <i class="fa-solid fa-search"></i>
+                    <button id="icon" type="submit">
+                        <i class="fa-solid fa-search" id="search"></i>
 
-                    </span>
+                    </button>
                 </form> 
             <div id="date">
             16/05/2024 
@@ -51,6 +51,9 @@
 <script>
     let currentDate = document.getElementById('date')
     let currentTime = document.getElementById('time')
+    // let search = document.getElementById('search')
+    let icon = document.getElementById('icon')
+    let text = document.getElementById('text')
     
 
     let d = new Date()
@@ -79,6 +82,27 @@
     currentDate.style.backgroundColor = 'green'
     currentDate.style.color = 'white'
     
+    icon.addEventListener('click', (e) =>{
+        e.preventDefault()
+        search.style.scale = '.7';
+        icon.style.backgroundColor = 'blue'
+        search.style.color = 'white'
+        console.log(text.value);
+        text.value = ''
+
+    })
+
+    icon.addEventListener('mouseout', (e) =>{
+        e.preventDefault()
+        search.style.scale = '1';
+        icon.style.backgroundColor = 'aqua'
+        search.style.color = 'black'
+
+
+
+    })
+
+   
 </script>
 </html>
 
