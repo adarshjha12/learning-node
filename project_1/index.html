@@ -21,7 +21,7 @@
                     <label for="city"></label>  
                     <input type="text" name="text" id="text" placeholder="enter city name" >
 
-                    <button id="icon" type="submit">
+                    <button id="button" type="submit">
                         Get Weather
                     </button>
                 </form> 
@@ -54,8 +54,7 @@
     let currentDate = document.getElementById('date')
     let currentTime = document.getElementById('time')
     // let search = document.getElementById('search')
-    let icon = document.getElementById('icon')
-    let text = document.getElementById('text')
+    let button = document.getElementById('icon')
     
 
     let d = new Date()
@@ -96,7 +95,17 @@
 
     let form = document.getElementById('form')
     form.addEventListener('submit', (e) =>{
-        
+        e.preventDefault()
+        let text = document.getElementById('text')
+        let city = text.value
+
+        fetch(`/weather?city=${city}`)
+        .then( response => response.json())
+        .then( data => {
+
+            let weatherDiv = document.getElementById('section-temp')
+            if(data)
+        })
     })
 
     icon.addEventListener('mouseout', (e) =>{
