@@ -104,7 +104,9 @@
         .then( data => {
 
             let weatherDiv = document.getElementById('section-temp')
-            if(data){}
+            if(data.name){
+                weatherDiv.innerHTML = `<h2> temp:${data.main.temp - 273.15.toFixed(2)}°C </h2>`
+            }
         })
     })
 
