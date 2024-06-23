@@ -3,9 +3,8 @@ let http = require('http')
 let axios = require('axios');
 let url = require('url');
 
-let link = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=15facce67a51ac42cf416ee97a10bfc2`
 
-let file = fs.readFileSync('index.html')
+let file = fs.readFileSync('index.html', 'utf8')
 
 
 let getWeatherData = async (city) =>{
@@ -23,7 +22,9 @@ let server = http.createServer( async (req, res) =>{
     if(req.url = '/'){
         res.writeHead(200, {'content-type': 'text/html'})
         res.end(file)
-    } else if(req.url.startsWith('/weather')){
+
+    }
+     else if(req.url.startsWith('/weather')){
         let queryObject = url.parse(req.url, true).query
         let city = queryObject.city
 
@@ -33,6 +34,7 @@ let server = http.createServer( async (req, res) =>{
             if(weatherData){
                 res.writeHead(200, {'contwnt-type': 'application/json'})
                 res.end(JSON.stringify(weatherData))
+                console.log(weatherData);
             }
 
             else{
@@ -51,8 +53,8 @@ let server = http.createServer( async (req, res) =>{
         res.writeHead(404, {'content-type': 'text/plain'})
         res.end('not found')
     }
-})
 
+    })
 
 
 let port = 3000

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="index.js">
 </head>
 <body>
     <div id="wrapper-1">
@@ -17,7 +16,7 @@
     
 
         <div id="wrapper-2">
-                <form action="" id="form"> 
+                <form id="form"> 
                     <label for="city"></label>  
                     <input type="text" name="text" id="text" placeholder="enter city name" >
 
@@ -96,19 +95,28 @@
     let form = document.getElementById('form')
     form.addEventListener('submit', (e) =>{
         e.preventDefault()
-        let text = document.getElementById('text')
-        let city = text.value
-
+        let city = document.getElementById('text').value
+        console.log(city);
         fetch(`/weather?city=${city}`)
         .then( response => response.json())
         .then( data => {
 
+            console.log(data);
             let weatherDiv = document.getElementById('section-temp')
             if(data.name){
                 weatherDiv.innerHTML = `<h2> temp:${data.main.temp - 273.15.toFixed(2)}°C </h2>`
-            }
+            } else {
+                        weatherDiv.innerHTML = `<p>Error: ${data.message || 'Could not retrieve weather data'}</p>`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching weather data:', error);
+                    const weatherDiv = document.getElementById('weather');
+                    weatherDiv.innerHTML = `<p>Error fetching weather data</p>`;
+                });
+        
         })
-    })
+    
 
     icon.addEventListener('mouseout', (e) =>{
         e.preventDefault()
