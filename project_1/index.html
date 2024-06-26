@@ -97,7 +97,7 @@
         e.preventDefault()
         let city = document.getElementById('text').value
         console.log(city);
-        fetch(`/weather?city=${city}`)
+        fetch(`/?city=${city}`)
         .then( response => response.json())
         .then( data => {
 
