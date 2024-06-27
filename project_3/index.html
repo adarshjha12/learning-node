@@ -6,12 +6,76 @@
     <title>Document</title>
 
     <style>
+        html{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
         body{
             background-color: black;
+            color: white;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center
+        }
+
+        #text{
+            height: 2rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            border: none;
+        }
+
+        #weather-div{
+            width: 300px;
+            height: 200px;
+            border: 2px solid salmon;
+            border-radius: 10px;
+        }
+
+        button{
+            background-image: linear-gradient(to right, aqua, blue);
+            border: none;
+            color: yellow;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-    
+    <h1>Weather app</h1>
+    <form action="" id="form">
+
+        <label for="text"></label>
+        <input type="text" name="text" id="text" placeholder="Enter City name">
+        <button>Get Weather</button>
+
+        <br>
+
+        <div id="weather-div"></div>
+    </form>
 </body>
+
+<script>
+    let input = document.getElementById('text')
+    let form = document.getElementById('form')
+    let weatherDiv = document.getElementById('weather-div')
+
+    form.addEventListener('submit', (e) =>{
+        e.preventDefault()
+
+        try {
+          let city = input.value
+          let response = fetch(`/weather?q=${city}`)
+          let data = JSON.stringify(response.data)
+
+          if (!response.ok) {
+            console.log('error fetching data');
+          }
+
+          weatherDiv.innerHTML = `<h2> temp:${(data.main.temp - 273).toFixed(2)}&deg;C </h2>`
+
+        } catch (error) {
+            console.log(error);
+        }
+    })
+</script>
 </html>
