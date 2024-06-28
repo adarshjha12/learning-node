@@ -38,6 +38,12 @@
             color: yellow;
             border-radius: 10px;
         }
+
+        .weather-info{
+            margin: 0;
+            padding: 0;
+            color: rgb(0, 255, 21);
+        }
     </style>
 </head>
 <body>
@@ -71,9 +77,11 @@
             console.log('error fetching data');
           }
           console.log(data);
-          weatherDiv.innerHTML = `<h4>Country: ${data.sys.country}</h4> </br>
-          <h4>Location: ${data.name}</h4> </br>
-          <h4> temp:${(data.main.temp- 273).toFixed(2)}&deg;C </h4>`
+          weatherDiv.innerHTML = `<h4 class="weather-info" >Country: ${data.sys.country}</h4> </br>
+          <h4 class="weather-info">Location: ${data.name}</h4> </br>
+          <h4 class="weather-info"> temp:${(data.main.temp- 273).toFixed(2)}&deg;C </h4>`;
+
+          weatherDiv.style.margin = '0'
 
         } catch (error) {
             console.log(error);
