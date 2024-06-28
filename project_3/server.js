@@ -17,5 +17,13 @@ let weather = async (city) =>{
 }
 
 let server = http.createServer( async (req, res) =>{
-    
+    if (req.url === '/') {
+        res.writeHead(200, {'content-type' : 'text/html'})
+        res.end(file)
+    }
+})
+
+
+server.listen(3000, 'localhost', () =>{
+    console.log('server is running on 3000');
 })
