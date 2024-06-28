@@ -9,10 +9,13 @@ let weatherAPI = '15facce67a51ac42cf416ee97a10bfc2';
 let apiKey = 'https://api.openweathermap.org/data/2.5/weather';
 
 let weather = async (city) =>{
-
     try {
         let response = await axios.get(`${weatherAPI}?q=${city}&appid=${apiKey}`)
     } catch (error) {
         console.log(error);
     }
 }
+
+let server = http.createServer( async (req, res) =>{
+    
+})
