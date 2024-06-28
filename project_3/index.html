@@ -59,19 +59,21 @@
     let form = document.getElementById('form')
     let weatherDiv = document.getElementById('weather-div')
 
-    form.addEventListener('submit', (e) =>{
+    form.addEventListener('submit', async (e) =>{
         e.preventDefault()
 
         try {
           let city = input.value
-          let response = fetch(`/weather?q=${city}`)
-          let data = JSON.stringify(response.data)
+          let response = await fetch(`/weather?city=${city}`)
+          let data = await response.json()
 
           if (!response.ok) {
             console.log('error fetching data');
           }
-
-          weatherDiv.innerHTML = `<h2> temp:${(data.main.temp - 273).toFixed(2)}&deg;C </h2>`
+          console.log(data);
+          weatherDiv.innerHTML = `<h4>Country: ${data.sys.country}</h4> </br>
+          <h4>Location: ${data.name}</h4> </br>
+          <h4> temp:${(data.main.temp- 273).toFixed(2)}&deg;C </h4>`
 
         } catch (error) {
             console.log(error);
