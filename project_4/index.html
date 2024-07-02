@@ -41,9 +41,6 @@
     }
    
     let getQuotes = async () =>{
-
-        const api = 'https://type.fit/api/quotes';
-
         try {
             let response = await fetch(api)
             data = await response.json()
