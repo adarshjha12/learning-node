@@ -26,14 +26,27 @@
 </body>
 <script>
     const api = 'https://type.fit/api/quotes';
+    let data = ''
+    //data defined here because we need it when we upadate the dom
+    let quotes = document.getElementById('quotes')
+    let author = document.getElementById('author')
+    let button = document.getElementById('button')
 
+    let rNum = () =>{
+        let randomNumber = Math.floor(Math.random()*15 + 1)
+        // console.log(randomNumber);
+        quotes.innerText = `${data[randomNumber].text}`
+        author.innerText = `${data[randomNumber].author.replace(', type.fit', '')}`
+
+    }
+   
     let getQuotes = async () =>{
 
         const api = 'https://type.fit/api/quotes';
 
         try {
             let response = await fetch(api)
-            let data = await response.json()
+            data = await response.json()
             console.log(data);
         } catch (error) {
             console.log(error);
@@ -41,6 +54,8 @@
     };
 
     getQuotes()
+
+    button.addEventListener('click', rNum)
     
 </script>
 </html>
