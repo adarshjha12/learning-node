@@ -76,3 +76,14 @@ body{
 .circle6 {
     top: 260px;
 }
+
+
+#twitter{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    & img{
+        width: 3rem;
+    }
+}

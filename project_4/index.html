@@ -12,6 +12,7 @@
             <div id="quotes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum alias amet tenetur laborum minima!</div>
             <div id="author">- adarsh jha</div>
         </div>
+        <div id="twitter"><img src="download.png" alt="twitter" ></div>
 
         <button id="button">Get quotes </button>
 
@@ -27,16 +28,20 @@
 <script>
     const api = 'https://type.fit/api/quotes';
     let data = ''
+    let quotesData = ''
     //data defined here because we need it when we upadate the dom
     let quotes = document.getElementById('quotes')
     let author = document.getElementById('author')
     let button = document.getElementById('button')
+    let twitter = document.getElementById('twitter')
+
 
     let rNum = () =>{
         let randomNumber = Math.floor(Math.random()*15 + 1)
-        // console.log(randomNumber);
-        quotes.innerText = `${data[randomNumber].text}`
-        author.innerText = `${data[randomNumber].author.replace(', type.fit', '')}`
+        quotesData = data[randomNumber]
+        console.log(quotesData)
+        quotes.innerText = `${quotesData.text}`
+        author.innerText = `${quotesData.author.replace(', type.fit', '')}`
 
     }
    
@@ -44,7 +49,6 @@
         try {
             let response = await fetch(api)
             data = await response.json()
-            console.log(data);
         } catch (error) {
             console.log(error);
         }
@@ -52,7 +56,19 @@
 
     getQuotes()
 
+    let tweetme = () =>{
+        let tweetpost = `https://x.com/intent/post?text=${quotesData.text}`
+        window.open(tweetpost)
+    }
+
     button.addEventListener('click', rNum)
-    
+    twitter.addEventListener('click', tweetme)
+
+    let abc = ''
+    let adarsh = () =>{
+        abc = 'efg'
+    }
+    adarsh()
+    console.log(abc);
 </script>
 </html>
