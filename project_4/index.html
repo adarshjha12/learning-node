@@ -4,8 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div id="wrapper">
+        <div class="box">
+            <div id="quotes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum alias amet tenetur laborum minima!</div>
+            <div id="author">- adarsh jha</div>
+        </div>
+
+        <button id="button">Get quotes </button>
+
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+        <div class="circle circle4"></div>
+        <div class="circle circle5"></div>
+        <div class="circle circle6"></div>
+        
+    </div>
 </body>
+<script>
+    const api = 'https://type.fit/api/quotes';
+
+    let getQuotes = async () =>{
+
+        const api = 'https://type.fit/api/quotes';
+
+        try {
+            let response = await fetch(api)
+            let data = await response.json()
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    getQuotes()
+    
+</script>
 </html>
